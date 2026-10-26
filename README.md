@@ -7,7 +7,7 @@ Xiaomi 15 Ultra (`xuanyuan`) için **prebuilt** GKI kernel ve boot görüntüler
 | `kernel` | 36 MB | GKI `Image` (Linux 6.6.118, `android15-6.6`, `ab15863337`) |
 | `prebuilt_kernel_headers.tar.gz` | 1.7 MB | kernel başlıkları |
 | `dtb.img` | 4.1 MB | device tree blob |
-| `dtbo.img` | 24 MB | device tree overlay'leri |
+| `dtbo.img` | 18 MB | device tree overlay'leri |
 | `vendor_boot.img` | 96 MB | vendor_boot (stok ramdisk + kernel modülleri + dtb) |
 | `vendor_dlkm.img` | 83 MB | vendor kernel modülleri |
 | `system_dlkm.img` | 15 MB | system kernel modülleri |
