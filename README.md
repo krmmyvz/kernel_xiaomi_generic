@@ -4,11 +4,11 @@ Xiaomi 15 Ultra (`xuanyuan`) için **prebuilt** GKI kernel ve boot görüntüler
 
 | Dosya | Boyut | Açıklama |
 |---|---|---|
-| `kernel` | 36 MB | GKI `Image` (Linux 6.6, `android15-6.6`) |
+| `kernel` | 36 MB | GKI `Image` (Linux 6.6.118, `android15-6.6`, `ab15863337`) |
 | `prebuilt_kernel_headers.tar.gz` | 1.7 MB | kernel başlıkları |
 | `dtb.img` | 4.1 MB | device tree blob |
-| `dtbo.img` | 18.9 MB | device tree overlay'leri |
-| `vendor_boot.img` | 36 MB | vendor_boot (stok ramdisk + kernel modülleri) |
+| `dtbo.img` | 24 MB | device tree overlay'leri |
+| `vendor_boot.img` | 96 MB | vendor_boot (stok ramdisk + kernel modülleri + dtb) |
 | `vendor_dlkm.img` | 83 MB | vendor kernel modülleri |
 | `system_dlkm.img` | 15 MB | system kernel modülleri |
 
@@ -17,6 +17,10 @@ Xiaomi 15 Ultra (`xuanyuan`) için **prebuilt** GKI kernel ve boot görüntüler
 Bu görseller cihazın kendi partition'larından **doğrudan** okunmuştur
 (`adb exec-out dd if=/dev/block/by-name/<part>`) — cihazda çalışan firmware
 ile birebir aynıdır.
+
+Güncel sürüm: HyperOS **OS4.0.0.6.XOAEUXM** (EEA), slot `_a`. `kernel` `boot_a`'dan,
+`dtb.img` `vendor_boot_a`'dan `unpack_bootimg` ile çıkarıldı; `vendor_dlkm`/`system_dlkm`
+`/dev/block/mapper/*_a`'dan okundu. Kamera/ekran/GPU modülleri vendor blob'larıyla aynı sürümdedir.
 
 `BoardConfig.mk` içinde `TARGET_FORCE_PREBUILT_KERNEL := true` olduğu için
 kernel kaynaktan derlenmez; bu repo doğrudan kullanılır:
